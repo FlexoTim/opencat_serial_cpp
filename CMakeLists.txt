@@ -9,22 +9,35 @@ option(CATKIN_ENABLE "Enable using the Catkin make extension to cmake (ie for RO
 # include serial lib
 add_subdirectory(serial)
 
+# declare lib
+add_library(
+  ${PROJECT_NAME}
+  src/${PROJECT_NAME}.cpp
+)
+
+# include and linking
+target_include_directories(
+  ${PROJECT_NAME}
+  PUBLIC
+  include/
+)
+target_link_libraries(${PROJECT_NAME} PRIVATE serial)
+
 if(${CATKIN_ENABLE})
   find_package(
     catkin REQUIRED COMPONENTS
     roscpp
-    opencat
   )
 
   catkin_package(
     INCLUDE_DIRS include
     LIBRARIES ${PROJECT_NAME}
-    CATKIN_DEPENDS roscpp serial
-    #  DEPENDS system_lib
+    CATKIN_DEPENDS roscpp
   )
 
-  include_directories(
-    include
+  target_include_directories(
+    ${PROJECT_NAME}
+    PRIVATE
     ${catkin_INCLUDE_DIRS}
   )
 
@@ -41,15 +54,4 @@ if(${CATKIN_ENABLE})
     DIRECTORY include/${PROJECT_NAME}/
     DESTINATION ${CATKIN_PACKAGE_INCLUDE_DESTINATION}
   )
-else()
-  include_directories(
-    include/
-    serial/include/
-  )
-  link_libraries(serial)
 endif()
-
-add_library(
-  ${PROJECT_NAME}
-  src/${PROJECT_NAME}.cpp
-)
