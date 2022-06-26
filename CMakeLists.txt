@@ -21,7 +21,7 @@ target_include_directories(
   PUBLIC
   include/
 )
-target_link_libraries(${PROJECT_NAME} PRIVATE serial)
+target_link_libraries(${PROJECT_NAME} PUBLIC serial)
 
 if(${CATKIN_ENABLE})
   find_package(
@@ -54,4 +54,7 @@ if(${CATKIN_ENABLE})
     DIRECTORY include/${PROJECT_NAME}/
     DESTINATION ${CATKIN_PACKAGE_INCLUDE_DESTINATION}
   )
+else()
+  add_executable(serial_examples examples/serial_examples.cpp)
+  target_link_libraries(serial_examples ${PROJECT_NAME})
 endif()
