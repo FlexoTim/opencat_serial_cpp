@@ -5,6 +5,7 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 add_compile_options(-std=c++11)
 
 option(CATKIN_ENABLE "Enable using the Catkin make extension to cmake (ie for ROS)" ON)
+option(BUILD_EXAMPLES "whether to build examples" OFF)
 
 # include serial lib
 add_subdirectory(serial)
@@ -55,6 +56,8 @@ if(${CATKIN_ENABLE})
     DESTINATION ${CATKIN_PACKAGE_INCLUDE_DESTINATION}
   )
 else()
-  add_executable(serial_examples examples/serial_examples.cpp)
-  target_link_libraries(serial_examples ${PROJECT_NAME})
+  if(${BUILD_EXAMPLES})
+    add_executable(serial_examples examples/serial_examples.cpp)
+    target_link_libraries(serial_examples ${PROJECT_NAME})
+  endif()
 endif()

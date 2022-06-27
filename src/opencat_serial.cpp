@@ -5,14 +5,16 @@
  * @date 2022.05.22
  **/
 #include "opencat_serial/opencat_serial.hpp"
+#include "types.hpp"
 #include <cassert>
 #include <chrono>
 #include <dirent.h>
 #include <errno.h>
 #include <fcntl.h>
+#include <iostream>
 #include <termios.h>
-#include <unistd.h>
 #include <thread>
+#include <unistd.h>
 
 namespace OpenCat
 {

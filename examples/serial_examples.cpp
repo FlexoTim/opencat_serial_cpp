@@ -1,4 +1,5 @@
 #include "opencat_serial/opencat_serial.hpp"
+#include <iostream>
 using namespace OpenCat;
 
 // predefined pose
