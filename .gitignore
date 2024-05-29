@@ -1,2 +1,4 @@
 .cache/
 build/
+/.vs/OpenCat_serial/v17
+/serial/visual_studio/.vs/visual_studio
