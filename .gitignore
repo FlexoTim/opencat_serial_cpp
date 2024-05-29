@@ -2,3 +2,15 @@
 build/
 /.vs/OpenCat_serial/v17
 /serial/visual_studio/.vs/visual_studio
+/serial/visual_studio/test_serial/x64/Debug
+/serial/visual_studio/x64/Debug
+/serial/visual_studio/serial/x64/Debug
+/serial/visual_studio/serial/serial.vcxproj.user
+/serial/visual_studio/test_serial/test_serial.vcxproj.user
+/.vs/VSWorkspaceState.json
+/serial/visual_studio/test_serial/test_serial.vcxproj.filters
+/serial/visual_studio/test_serial/test_serial.vcxproj.filters
+/serial/visual_studio/test_serial/test_serial.vcxproj.filters
+/serial/visual_studio/test_serial/test_serial.vcxproj.filters
+/serial/visual_studio/test_serial/test_serial.vcxproj.filters
+/serial/visual_studio/test_serial/test_serial.vcxproj.filters
