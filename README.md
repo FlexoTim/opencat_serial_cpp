@@ -1,4 +1,25 @@
 # OpenCat Serial C++
+forked from [OpenCat Serial C++](https://github.com/PetoiCamp/opencat_serial_cpp)
+
+Modifications:
+
+* Update Visual Studio project toolset
+* Wraps API in a namespace
+* wstring conversion correction
+* Use Visual Studio code layout
+* Minor cosmetic code "tidy"
+* Compiled for C++20
+
+The Windows Visual Studio 2022 IDE is the primary tool used to maintain the project. No attempt  has been  made  to  alter the environment for other platforms.
+The IDE version is:
+
+Microsoft Visual Studio Community 2022 (64-bit) - Current
+Version 17.10.1
+
+See [README.md](serial/README.MD) in serial folder
+
+## Original README
+
 Serial interface implementation for [OpenCat](https://github.com/PetoiCamp/OpenCat) robot in C++.
 
 ## Install

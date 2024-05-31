@@ -33,7 +33,7 @@ namespace serial {
 
 #pragma message("std::wstring_convert is deprecated in C++17")
 #pragma message("std::codecvt_utf8_utf16 is deprecated in C++17")
-#pragma message("std::codecvt_utf8_utf16 remove in C++26")
+#pragma message("std::codecvt_utf8_utf16 to be remove in C++26")
 
 		wstring utf8ToUtf16(const string& utf8Str)
 		{

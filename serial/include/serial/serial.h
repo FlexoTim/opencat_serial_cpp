@@ -42,8 +42,6 @@
 #include <string>
 #include <sstream>
 #include <stdexcept>
- //#include <cstring>
-//#include <exception>
 
 #define THROW(exceptionClass, message) throw exceptionClass(\
 	__FILE__, __LINE__, (message)\
@@ -124,14 +122,18 @@ namespace serial {
 
 		/*! Number of milliseconds between bytes received to timeout on. */
 		uint32_t inter_byte_timeout;
+
 		/*! A constant number of milliseconds to wait after calling read. */
 		uint32_t read_timeout_constant;
+
 		/*! A multiplier against the number of requested bytes to wait after
 		 *  calling read.
 		 */
 		uint32_t read_timeout_multiplier;
+
 		/*! A constant number of milliseconds to wait after calling write. */
 		uint32_t write_timeout_constant;
+
 		/*! A multiplier against the number of requested bytes to wait after
 		 *  calling write.
 		 */
@@ -640,12 +642,10 @@ namespace serial {
 		class ScopedWriteLock;
 
 		// Read common function
-		size_t
-			read_(uint8_t* buffer, size_t size);
-		// Write common function
-		size_t
-			write_(const uint8_t* data, size_t length);
+		size_t read_(uint8_t* buffer, size_t size);
 
+		// Write common function
+		size_t write_(const uint8_t* data, size_t length);
 	};
 
 	class SerialException : public std::exception
@@ -695,8 +695,12 @@ namespace serial {
 			ss << ", file " << file_ << ", line " << line_ << ".";
 			e_what_ = ss.str();
 		}
+
 		explicit IOException(string file, int line, const char* description)
-			: file_(file), line_(line), errno_(0) {
+			: file_(file)
+			, line_(line)
+			, errno_(0)
+		{
 			stringstream ss;
 			ss << "IO Exception: " << description;
 			ss << ", file " << file_ << ", line " << line_ << ".";
@@ -729,6 +733,7 @@ namespace serial {
 			e_what_ = ss.str();
 		}
 		PortNotOpenedException(const PortNotOpenedException& other) : e_what_(other.e_what_) {}
+
 		virtual ~PortNotOpenedException() throw() {}
 	
 		virtual const char* what() const throw () {

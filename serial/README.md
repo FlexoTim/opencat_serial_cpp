@@ -1,5 +1,24 @@
 # Serial Communication Library
 
+forked from [OpenCat Serial C++](https://github.com/PetoiCamp/opencat_serial_cpp)
+
+Modifications:
+
+* Update Visual Studio project toolset
+* Wraps API in a namespace
+* wstring conversion correction
+* Use Visual Studio code layout
+* Minor cosmetic code "tidy"
+* Compiled for C++20
+
+The Windows Visual Studio 2022 IDE is the primary tool used to maintain the project. No attempt  has been  made  to  alter the environment for other platforms.
+The IDE version is:
+
+Microsoft Visual Studio Community 2022 (64-bit) - Current
+Version 17.10.1
+
+## Original README
+
 [![Build Status](https://travis-ci.org/wjwwood/serial.svg?branch=master)](https://travis-ci.org/wjwwood/serial)*(Linux and OS X)* [![Build Status](https://ci.appveyor.com/api/projects/status/github/wjwwood/serial)](https://ci.appveyor.com/project/wjwwood/serial)*(Windows)*
 
 **NOTE:** copied from [https://github.com/wjwwood/serial/tree/69e0372cf0d3796e84ce9a09aff1d74496f68720](serial) and remove catkin dependencies.

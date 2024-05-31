@@ -9,10 +9,8 @@ build/
 /serial/visual_studio/test_serial/test_serial.vcxproj.user
 /.vs/VSWorkspaceState.json
 /serial/visual_studio/test_serial/test_serial.vcxproj.filters
-/serial/visual_studio/test_serial/test_serial.vcxproj.filters
-/serial/visual_studio/test_serial/test_serial.vcxproj.filters
-/serial/visual_studio/test_serial/test_serial.vcxproj.filters
-/serial/visual_studio/test_serial/test_serial.vcxproj.filters
-/serial/visual_studio/test_serial/test_serial.vcxproj.filters
-/serial/visual_studio/test_serial/test_serial.vcxproj.filters
-/serial/visual_studio/test_serial/test_serial.vcxproj.filters
+*.tlog
+*.obj
+/serial/visual_studio/serial/serial/x64/Debug/serial.Build.CppClean.log
+/serial/visual_studio/serial/serial/x64/Debug
+/serial/visual_studio/test_serial/test_serial/x64/Debug
