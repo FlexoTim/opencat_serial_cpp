@@ -106,7 +106,10 @@ namespace serial {
 #ifdef max
 # undef max
 #endif
-		static uint32_t max() { return numeric_limits<uint32_t>::max(); }
+		static uint32_t max()
+		{
+			return numeric_limits<uint32_t>::max();
+		}
 		/*!
 		 * Convenience function to generate Timeout structs using a
 		 * single absolute timeout.
