@@ -4,12 +4,13 @@ forked from [OpenCat Serial C++](https://github.com/PetoiCamp/opencat_serial_cpp
 
 Modifications:
 
-* Update Visual Studio project toolset
+* Update platform toolset to Visual Studio v143
 * Wraps API in a namespace
-* wstring conversion correction
+* restore STL wstring conversion
+* Compiled for C++20
 * Use Visual Studio code layout
 * Minor cosmetic code "tidy"
-* Compiled for C++20
+* Add library version macro string (1.2.0)
 
 The Windows Visual Studio 2022 IDE is the primary tool used to maintain the project. No attempt  has been  made  to  alter the environment for other platforms.
 The IDE version is:

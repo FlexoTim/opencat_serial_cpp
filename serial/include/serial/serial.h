@@ -43,6 +43,8 @@
 #include <sstream>
 #include <stdexcept>
 
+#define OCS_VERSION		"1.2.0"
+
 #define THROW(exceptionClass, message) throw exceptionClass(\
 	__FILE__, __LINE__, (message)\
 	)

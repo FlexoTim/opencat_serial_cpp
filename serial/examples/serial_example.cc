@@ -66,6 +66,7 @@ namespace internal {
 	{
 		cerr << "Usage: test_serial {-e|<serial port address>}"
 			" <baudrate> [test string]" << endl
+			<< "Library version: " << OCS_VERSION << endl
 			;
 	}
 
