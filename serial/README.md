@@ -2,7 +2,7 @@
 
 forked from [OpenCat Serial C++](https://github.com/PetoiCamp/opencat_serial_cpp)
 
-Modifications:
+## Overiew:
 
 * Update platform toolset to Visual Studio v143
 * Wraps API in a namespace
@@ -17,6 +17,57 @@ The IDE version is:
 
 Microsoft Visual Studio Community 2022 (64-bit) - Current
 Version 17.10.1
+
+### Namespace serial
+
+The library API is now wrapped in the namespace "serial" to isolate the API from the global namespace.
+
+    namespace serial {
+
+        // API declarations ...
+
+    }   // namespace serial
+
+### Restore STL wstring conversion
+
+The Windows implementation of the getPort API has been moddified
+to use the stl for wstring conversion function operations.
+
+	namespace serial {
+		namespace internal {
+
+		#pragma message("std::wstring_convert is deprecated in C++17")
+		#pragma message("std::codecvt_utf8_utf16 is deprecated in C++17")
+		#pragma message("std::codecvt_utf8_utf16 to be remove in C++26")
+
+			wstring utf8ToUtf16(const string& utf8Str)
+			{
+				wstring_convert<codecvt_utf8_utf16<wchar_t>> conv;
+				return conv.from_bytes(utf8Str);
+			}
+
+			string utf16ToUtf8(const wstring& utf16Str)
+			{
+				wstring_convert<codecvt_utf8_utf16<wchar_t>> conv;
+				return conv.to_bytes(utf16Str);
+			}
+		}	// namespace internal
+		using namespace serial::internal;
+
+		string Serial::SerialImpl::getPort() const
+		{
+			// warning: argument': conversion from 'const wchar_t'
+			// to 'const _Elem', possible loss of data
+			//return string(port_.begin(), port_.end());
+			return utf16ToUtf8(port_);
+		}
+
+		// ...
+
+	}	// namespace serial
+
+When the functions are removed from the STL a replacement
+of the functionality will be provided.
 
 ## Original README
 
